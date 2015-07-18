@@ -67,6 +67,20 @@ $ git log
 
 ```
 
+### Remote
+
+Here we use Github client because it is easy to setup and begin.
+
+```bash
+
+# Adds Github repository as a remote origin
+$ git remote add origin https://github.com/Username/projectName.git
+
+# Pushes to the remote orgin
+$ git push -u origin master
+
+```
+
 ### Clone
 
 By cloning, you can use exsiting repository.
@@ -123,21 +137,51 @@ $ git mv sample.txt renamed.txt
 
 ```
 
-## Remote
+### Clean
 
-Here we use Github client because it is easy to setup and begin.
+You can delete files which are not managed by Git by `git clean`.
 
 ```bash
 
-# Adds Github repository as a remote origin
-$ git remote add origin https://github.com/Username/projectName.git
+# Firstly, check which files would be deleted by `git clean -f`
+$ git clean -n
 
-# Pushes to the remote orgin
-$ git push -u origin master
+# Then, delete those files
+$ git clean -f
+
+```
+
+## Intermediate
+
+### Stash
+
+Use `git stash` when you want to temporary go back to the clean working directory without losing the current state. Git offers stash, some kind of temporal stages for saving changes but you do not want to add them yet.
+
+```bash
+
+
 
 ```
 
 ## Tips
+
+### `.gitignore`
+
+@see
+https://github.com/github/gitignore
+
+When you want to delete some files which are already managed in Git, then follow below steps.
+
+```bash
+
+# Adds files which you want to remove from Git
+$ echo ".DS_Store" >> .gitignore
+
+# Removes target file from cache
+$ git rm --cached .DS_Store
+
+
+```
 
 ### Alias
 

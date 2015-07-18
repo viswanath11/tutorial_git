@@ -412,6 +412,15 @@ $ git pull --rebase origin
 
 ## Tips
 
+### Commit
+
+```bash
+
+# ammends the latest commit message
+$ git commit --ammend -m "Added the correct message"
+
+```
+
 ### `git log`
 
 
@@ -440,6 +449,15 @@ $ git log --decorate=no
 
 # shows sizes of each commits
 $ git log --log-size
+
+# shows with diff
+$ git log -p
+
+# shows with diffstat
+$ git log --stat
+
+# shows with changed file name and status
+$ git log --name-status
 
 #############
 # limit
@@ -507,5 +525,17 @@ $ git config --global alias.co commit
 # 5: file contents
 #
 $ git blame src/base.js
+
+```
+
+### Grep
+
+```bash
+
+# You can search repository with grep
+$ git grep "<h1>"
+$ git grep -n "<h1>" 		# shows with line number
+$ git grep -i "test" 		# ignore cases(small/capital)
+$ git grep -E "<img.*>"	# can use POSIX Regexp
 
 ```

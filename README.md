@@ -298,6 +298,10 @@ http://stackoverflow.com/questions/804115/when-do-you-use-git-rebase-instead-of-
 
 ```bash
 
+#############
+# local
+#############
+
 # shows tag list
 $ git tag
 
@@ -315,6 +319,19 @@ $ git tag v1.0.2 --message=<msg>
 # deltes tag
 $ git tag -d v1.0.2
 
+#############
+# remote
+#############
+
+# shows tags in remote repository
+$ git ls-remote --tags
+
+# deletes tags in remote repository
+$ git push origin :v1.0
+
+# with `-n` option, you can check the result of the command
+$ git push -n origin :v1.0
+
 ```
 
 ## Remote
@@ -323,7 +340,75 @@ $ git tag -d v1.0.2
 
 ```bash
 
+# shows the name of remote repository
+$ git remote
+
+# shows the detail of remote repository
+$ git remote -v
+
+# adds remote repository
+$ git remote add repoName git@github.com/name/reponame.git
+
+# deltes remote repository
+$ git remote remove repoName
+
+# renames repository name
+$ git remote rename origin neworigin
+
+# updates repository url
+$ git remote set-url github https://github.com/user/reponame.git
+
 ```
+
+### Push/Pull
+
+```bash
+
+# pulls from origin's master branch
+$ git pull origin master
+
+# pushes from origin's master branch
+$ git push origin master
+
+```
+
+### Pull/Fetch
+
+This is the golden rule of pull and fetch.
+
+```text
+
+pull = fetch + (merge or rebase)
+
+```
+
+> You can do a git fetch at any time to update your remote-tracking branches under refs/remotes/<remote>/. This operation never changes any of your own local branches under refs/heads, and is safe to do without changing your working copy. I have even heard of people running git fetch periodically in a cron job in the background (although I wouldn't recommend doing this).
+
+> A git pull is what you would do to bring a local branch up-to-date with its remote version, while also updating your other remote-tracking branches.
+
+@see
+http://stackoverflow.com/questions/292357/what-are-the-differences-between-git-pull-and-git-fetch
+
+
+```bash
+
+# fetches
+$ git fetch
+$ git fetch --all 	# useful when the repo is connected with multiple remote repositories
+$ git fetch --tags 	# gets tag info at the same time
+$ git fetch --prune	# remobe branchs in local repository which were deleted in remote repository
+
+# merge
+$ git merge origin/master
+
+# pull (fetch + merge)
+$ git pull origin
+
+# pull (fetch + rebase)
+$ git pull --rebase origin
+
+```
+
 
 ## Tips
 

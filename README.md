@@ -179,6 +179,45 @@ $ git stash clear
 
 ```
 
+### Reset
+
+```bash
+
+# Firstly, checks commit ID
+# * commit ID is a SHA-1 hashed string
+$ git log
+
+# then you can see commit logs like belows
+...
+commit 7a16aed234ef71f9a0d021cf9319a8783256a7e1
+Author: WagatsumaKenju <ken901waga@gmail.com>
+Date:   Sat Jul 18 16:29:17 2015 +0900
+
+    done Remove/Rename
+...
+
+# then go backs to the commit point by the commit id
+$ git reset 7a16aed234ef71f9a0d021cf9319a8783256a7e1
+
+```
+
+#### Option
+
+||`git reset --soft`|`git reset --mixed`|`git reset --hard`|
+|---|---|---|---|
+|Git directory			|Reset		|Reset		|Reset|
+|Staging area 			|Unchanged|Reset		|Reset|
+|Working directory 	|Unchanged|Unchanged|Reset|
+
+### Filter Branch
+
+```bash
+
+# remove all commits of sample.txt (including all commit points)
+$ git filter-branch --tree-filter 'rm -f sample.txt'
+
+```
+
 ## Tips
 
 ### `.gitignore`

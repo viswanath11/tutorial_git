@@ -16,7 +16,7 @@ case $answer in
 		;;
 	*)
 		;;
-ecase
+esac
 
 git push
 

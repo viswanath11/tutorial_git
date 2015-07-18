@@ -242,6 +242,40 @@ $ git filter-branch --tree-filter 'rm -f sample.txt'
 
 ## Branch
 
+### Branch - Basic
+
+```bash
+
+# lists all branch
+$ git branch		# shows local repository
+$ git branch -r # shows remote repository
+$ git branch -a # shows both local and remote repository
+
+# creates new branch (named 'topic-branch')
+$ git branch topic-branch
+
+# creates & move to a new branch
+$ git checkout -b topic-branch
+
+# renames branch
+$ git branch -m topic-branch new-branch
+
+# changes the current branch
+$ git checkout master
+
+# deletes branch
+$ git branch -d new-branch
+
+```
+
+### Branch - Merge
+
+```bash
+
+
+
+```
+
 ## Tips
 
 ### `git log`

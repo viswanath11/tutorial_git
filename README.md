@@ -268,13 +268,31 @@ $ git branch -d new-branch
 
 ```
 
-### Branch - Merge
+### Branch - Merge/Rebase
 
 ```bash
 
+# merge
+$ git merget topic-branch
 
+# rebase
+$ git rebase topic-branch
+
+# cherry-pick (in short, partially-merge)
+$ git cherry-pick [commitID]
 
 ```
+
+#### Merget vs Rebase?
+
+> ##### Merge
+> Let's say you have created a branch for the purpose of developing a single feature. When you want to bring those changes back to master, you probably want merge (you don't care about maintaining all of the interim commits).
+
+> ##### Rebase
+> A second scenario would be if you started doing some development and then another developer made an unrelated change. You probably want to pull and then rebase to base your changes from the current version from the repo.
+
+@see
+http://stackoverflow.com/questions/804115/when-do-you-use-git-rebase-instead-of-git-merge
 
 ## Tips
 

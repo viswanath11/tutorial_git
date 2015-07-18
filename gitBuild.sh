@@ -1,7 +1,19 @@
 #!/bin/sh
+
 git add -A
+
 read -p "Commit Message: " commitMessage
 git commit -m "$commitMessage"
+
+read -p "Do you want to add tag? (y/N)" answer
+
+case $answer in
+	yes)
+		read -p "Tag: " tag
+		git tag $tag
+		;;
+ecase
+
 git push
 
 # comments out below if you want to publish gh-pages

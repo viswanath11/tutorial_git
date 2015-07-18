@@ -240,14 +240,21 @@ $ git filter-branch --tree-filter 'rm -f sample.txt'
 
 ```
 
+## Branch
+
 ## Tips
 
 ### `git log`
 
+
 @see http://git-scm.com/docs/git-log
-There are a lot of options for `git log` and most of them are very useful. It is worth knowing some of them.
+There are a lot of options for `git log` and most of them are very useful. It is worth remembering some of them.
 
 ```bash
+
+#############
+# basic
+#############
 
 # shows git log in one line
 $ git log --oneline
@@ -257,6 +264,33 @@ $ git log --graph
 
 # shows git log with decorated apperance in one line
 $ git log --oneline --graph
+
+# prints out the ref names of any commits that are shown
+$ git log --decorete=short
+$ git log --decorate=full
+$ git log --decorate=no
+
+# shows sizes of each commits
+$ git log --log-size
+
+#############
+# limit
+#############
+
+# By max count
+$ git log --max-count=2
+
+# By author name
+$ git log --author=AuthorName
+
+# By log message
+$ git log --grep=MatchedText
+
+# Prints only merge commits
+$ git log --merges
+
+# By tags
+$ git log --tags=Tag
 
 ```
 

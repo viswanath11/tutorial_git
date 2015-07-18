@@ -159,7 +159,23 @@ Use `git stash` when you want to temporary go back to the clean working director
 
 ```bash
 
+# adds the current state to stash with stash message
+$ git stash save "stash: stash test"
 
+# lists stashed
+$ git stash list
+
+# reflects stash by stash index
+$ git stash pop stash@{0} --index
+
+# removes stash
+$ git stash drop stash@{0}
+
+# shows stash contents
+$ git stash show stash@{0} -p
+
+# clears all stash
+$ git stash clear
 
 ```
 

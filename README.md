@@ -1,5 +1,8 @@
 # Tutorial Git
 
+- [Github](https://github.com/KENJU/tutorial_git)
+- [Documentation](http://kenju.github.io/tutorial_git/)
+
 ## Config
 
 ### Username/email

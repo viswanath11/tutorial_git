@@ -294,6 +294,29 @@ $ git cherry-pick [commitID]
 @see
 http://stackoverflow.com/questions/804115/when-do-you-use-git-rebase-instead-of-git-merge
 
+### Tag
+
+```bash
+
+# shows tag list
+$ git tag
+
+# adds simple tag
+$ git tag v1.0
+
+# adds tag with annotation
+$ git tag v1.0.1 -a
+$ git tag v1.0.1 --annotation
+
+# adds tag with message
+$ git tag v1.0.2 -m <msg>
+$ git tag v1.0.2 --message=<msg>
+
+# deltes tag
+$ git tag -d v1.0.2
+
+```
+
 ## Tips
 
 ### `git log`
@@ -374,5 +397,22 @@ $ git config --global alias.co checkout
 # `commit` can be called by `ci`
 $ git config --global alias.co commit
 
+
+```
+
+### Blame
+
+```bash
+
+# You can find where bugs are injected.
+#
+# `git blame` shows...
+# 1: file name
+# 2: author
+# 3: modified time
+# 4: line number
+# 5: file contents
+#
+$ git blame src/base.js
 
 ```

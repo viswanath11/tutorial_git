@@ -84,7 +84,7 @@ $ git clone git@github.com:username/repositoryname.git
 
 ```
 
-### Add
+### Add/Reset
 
 ```bash
 
@@ -98,6 +98,28 @@ $ git add -patch .
 # Adds only files which have been already managed by git
 $ git add -u .
 $ git add -update .
+
+```
+
+If you want to goes back to working directory from staging areas, then use `reset` commands.
+
+```bash
+
+$ git reset
+
+```
+
+### Remove/Rename
+
+Just deleting your files in Finder.app or explorer does not mean that those files would be deleted from Git. You have to user `git rm` command to delete those files info from Git as well. This is also the same when you rename files.
+
+```bash
+
+# Removes files
+$ git rm sample.txt
+
+# Renames files
+$ git mv sample.txt renamed.txt
 
 ```
 

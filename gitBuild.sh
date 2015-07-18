@@ -12,6 +12,10 @@ case $answer in
 		read -p "Tag: " tag
 		git tag $tag
 		;;
+	no)
+		;;
+	*)
+		;;
 ecase
 
 git push

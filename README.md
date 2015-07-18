@@ -179,7 +179,9 @@ $ git stash clear
 
 ```
 
-### Reset
+### Reset/Reflog
+
+#### Reset
 
 ```bash
 
@@ -201,13 +203,33 @@ $ git reset 7a16aed234ef71f9a0d021cf9319a8783256a7e1
 
 ```
 
-#### Option
+#### Reset Options
 
 ||`git reset --soft`|`git reset --mixed`|`git reset --hard`|
 |---|---|---|---|
 |Git directory			|Reset		|Reset		|Reset|
 |Staging area 			|Unchanged|Reset		|Reset|
 |Working directory 	|Unchanged|Unchanged|Reset|
+
+#### Reflog
+
+However how about you want to "reset the reset"? Then use `git reflog` to see changed history of HEAD branch.
+
+```bash
+
+$ git reflog
+d46f725 HEAD@{0}: reset: moving to 7a16aed234ef71f9a...
+2a2d92b HEAD@{1}: commit: ...commit messages... # you want to go back to this HEAD
+338fbb3 HEAD@{2}: commit: ...commit messages...
+7a16aed HEAD@{3}: commit: ...commit messages...
+cfa988e HEAD@{4}: commit: ...commit messages...
+8389e8c HEAD@{5}: commit: ...commit messages...
+...
+
+# then go backs to the HEAD@{1}
+$ git reset --hard 2a2d92b
+
+```
 
 ### Filter Branch
 
@@ -219,6 +241,24 @@ $ git filter-branch --tree-filter 'rm -f sample.txt'
 ```
 
 ## Tips
+
+### `git log`
+
+@see http://git-scm.com/docs/git-log
+There are a lot of options for `git log` and most of them are very useful. It is worth knowing some of them.
+
+```bash
+
+# shows git log in one line
+$ git log --oneline
+
+# shows git log with decorated apperance
+$ git log --graph
+
+# shows git log with decorated apperance in one line
+$ git log --oneline --graph
+
+```
 
 ### `.gitignore`
 

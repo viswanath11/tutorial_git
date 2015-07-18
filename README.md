@@ -283,7 +283,7 @@ $ git cherry-pick [commitID]
 
 ```
 
-#### Merget vs Rebase?
+#### Merge vs Rebase?
 
 > ##### Merge
 > Let's say you have created a branch for the purpose of developing a single feature. When you want to bring those changes back to master, you probably want merge (you don't care about maintaining all of the interim commits).

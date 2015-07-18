@@ -12,6 +12,7 @@ case $answer in
 		git tag
 		read -p "Tag: " tag
 		git tag $tag
+		git push --tags
 		;;
 	n)
 		;;

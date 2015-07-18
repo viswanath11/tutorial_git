@@ -67,7 +67,7 @@ $ git log
 
 ```
 
-### Remote
+### Push to Github
 
 Here we use Github client because it is easy to setup and begin.
 
@@ -314,6 +314,14 @@ $ git tag v1.0.2 --message=<msg>
 
 # deltes tag
 $ git tag -d v1.0.2
+
+```
+
+## Remote
+
+### Basic
+
+```bash
 
 ```
 

@@ -23,7 +23,7 @@ esac
 git push
 
 # comments out below if you want to publish gh-pages
-# git checkout gh-pages
-# git rebase master
-# git push origin gh-pages
-# git checkout master
+git checkout gh-pages
+git rebase master
+git push origin gh-pages
+git checkout master

@@ -5,15 +5,15 @@ git add -A
 read -p "Commit Message: " commitMessage
 git commit -m "$commitMessage"
 
-read -p "Do you want to add tag? (y/N)" answer
+read -p "Do you want to add tag? (y/n)" answer
 
 case $answer in
-	yes)
+	y)
 		git tag
 		read -p "Tag: " tag
 		git tag $tag
 		;;
-	no)
+	n)
 		;;
 	*)
 		;;

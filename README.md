@@ -417,7 +417,7 @@ $ git pull --rebase origin
 ```bash
 
 # ammends the latest commit message
-$ git commit --ammend -m "Added the correct message"
+$ git commit --amend -m "Added the correct message"
 
 ```
 

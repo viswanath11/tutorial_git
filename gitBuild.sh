@@ -9,6 +9,7 @@ read -p "Do you want to add tag? (y/N)" answer
 
 case $answer in
 	yes)
+		git tag
 		read -p "Tag: " tag
 		git tag $tag
 		;;
